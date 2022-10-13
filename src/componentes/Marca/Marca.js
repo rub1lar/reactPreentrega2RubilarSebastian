@@ -1,4 +1,4 @@
-import logo from "./marca.jpg";
+import logo from "./marca.png";
 
 function NoMercy(){
     return (

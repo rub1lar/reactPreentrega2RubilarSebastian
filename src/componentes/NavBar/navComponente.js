@@ -14,20 +14,20 @@ function Navbarra () {
 return (
 <div> 
 <div className="App"> 
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Container fluid>
       <NoMercy/>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           
-          <Nav
-            className="me-auto my-2 my-lg-0 mx-auto"
+          <Nav 
+            className="me-auto my-2 my-lg-0 mx-auto letra"
             style={{ maxHeight: '130px' }}
           > 
           
-            <Nav.Link  href="#action1">Ropa</Nav.Link>
-            <Nav.Link href="#action2">Zapatillas</Nav.Link>
-            <Nav.Link href="#action3">Accesorios</Nav.Link>
+             <a  className="navar" href="#action1">Ropa</a>
+             <a className="navar" href="#action2">Zapatillas</a>
+             <a  className="navar" href="#action3">Accesorios</a>
             
           </Nav>
         

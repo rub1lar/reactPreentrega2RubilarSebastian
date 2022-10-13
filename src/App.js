@@ -1,6 +1,10 @@
 
 import Navbarra from "./componentes/NavBar/navComponente";
+import  "./componentes/NavBar/nav.css";
 import ItemList from  "./componentes/ItemListContainer/ItemListContainer";
+import './componentes/ItemListContainer/Item.css';
+
+
 
 function App() {
   return (
@@ -8,10 +12,7 @@ function App() {
     <div>
     <Navbarra/>
     </div>
-    <div>
-      <ItemList/>
-    </div>
-
+    <ItemList title="seccion item" bienvenida="Bienvenidos A NoMercy!" description="seccion"/> 
     </div>
   );
 }
