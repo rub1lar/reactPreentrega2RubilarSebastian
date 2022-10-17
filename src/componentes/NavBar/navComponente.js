@@ -13,8 +13,8 @@ import Nav from 'react-bootstrap/Nav';
 function Navbarra () {
 return (
 <div> 
-<div className="App"> 
-    <Navbar bg="primary" expand="lg">
+<div className="App bg-dark"> 
+    <Navbar expand="lg">
       <Container fluid>
       <NoMercy/>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -25,23 +25,21 @@ return (
             style={{ maxHeight: '130px' }}
           > 
           
-             <a  className="navar" href="#action1">Ropa</a>
-             <a className="navar" href="#action2">Zapatillas</a>
-             <a  className="navar" href="#action3">Accesorios</a>
+             <a  className="navar" href="#action1">ROPA</a>
+             <a className="navar" href="#action2">ZAPATILLAS</a>
+             <a  className="navar" href="#action3">GORRAS</a>
             
           </Nav>
         
-          <Cart/>
-         
-
           <Form className="d-flex">
+          <Cart/>
             <Form.Control
               type="search"
               placeholder="Buscar Producto"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Buscar</Button>
+            <Button className="bg-dark btnr">Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

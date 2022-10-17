@@ -1,10 +1,10 @@
-import logo from "./logo.png";
-
+import logo from "./logo1.png";
+import "./carrito.css"
 function Cart(){
     return (
    // eslint-disable-next-line jsx-a11y/anchor-is-valid
    <a href="#" >
-<img  src={logo} alt="" className="logo" /></a>
+<img  className="carrito" src={logo} alt=""  /></a>
     )
     
     }
