@@ -3,7 +3,7 @@ import Item from "./Items";
 import {useParams} from "react-router-dom";
 
 
-const ITEN = [
+export const ITEN = [
  {
      "id": "1",
      "stock": "1",
@@ -50,24 +50,23 @@ const ITEN = [
         setTimeout(() => {
             resolve(ITEN)
             isLoading(true)
-        }, 3000);
+        }, 1500);
     })
   }
   useEffect(() => {
-    async function fetchedItems1(){
+    async function fetchedItems(){
       const items = await listado(); 
       setProductos(items)
     }
 
-    fetchedItems1()
+    fetchedItems()
   }, [] );
 
     return ( 
         <div >
+      
           {!loading ? 
-        {
-            productos 
-            : categoria ? productos.filter((prod) => prod.categoria === categoria).map((el)=>(
+            productos : categoria? productos.filter((prod) => prod.categoria === categoria).map((el)=>(
               <Item 
              Id={el.id}
               nombre={el.nombre}
@@ -75,9 +74,11 @@ const ITEN = [
               categoria={el.categoria}
               img = {el.img}
               valor = {el.valor}
+
               />
+     
             ))
-  
+   
           : productos.map((el)=>(
             <Item 
             Id={el.id}
@@ -90,8 +91,7 @@ const ITEN = [
           ))
           }
           :
-         <p>Loading</p>
-        }
+        
         </div>
 
     );

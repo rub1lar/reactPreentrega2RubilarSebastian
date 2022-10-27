@@ -7,10 +7,34 @@ import "./componentes/CartWidget/carrito.css"
 import Carrousell from "./componentes/Carrousell"
 import Bienvenida from  "./componentes/Bienvenida/Bienvenida";
 import './componentes/Bienvenida/bienvenida.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import ItemDetailContainer from "./componentes/items/ItemDetailContainer"
 
 function App() {
   return (
-    <div>
+
+    <>
+    <BrowserRouter>
+    <div className="bienvenida">
+     <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
+      </div>
+      <Navbarra/><Carrousell/>
+      <Routes>
+      
+      <Route path="/" element={<ItemList/>} />
+      <Route path="/categoria/:categoria" element={<ItemList/>} />
+      <Route path="/categoria/:productoid" element={<ItemDetailContainer/>} />
+  
+      
+      </Routes>
+
+    </BrowserRouter>
+    </>
+
+
+
+
+    /* <div>
       <div className="bienvenida">
      <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
       </div>
@@ -21,8 +45,10 @@ function App() {
     <div>
 <Carrousell/>
     </div>
+
     <ItemList title="seccion item" description="seccion"/> 
     </div>
+     */
   );
 }
 export default App;
