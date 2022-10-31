@@ -1,7 +1,8 @@
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ITEN from "./ItemList";
+
+ 
 
 
 function ItemDetailContainer() {
@@ -11,11 +12,12 @@ function ItemDetailContainer() {
   const [loading, isLoading] = useState(true)
 
   //SIMULACION API
+  
   const getItem = () => {
-
+    let items = require("../../back/productos.json")
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
-            resolve(ITEN)
+            resolve(items)
             isLoading(false)
         }, 1500);
     })
@@ -32,37 +34,22 @@ function ItemDetailContainer() {
   }, []);
 
  return(
-
-    
-        <div className="md:flex justify-start ml-10 h-[100vh] ">   
-        {loading ? productos : productos
-          .filter((prod) => prod.id.includes(productoid))
-          .map((el)=>(
+        <div >   
+        {loading ? productos : productos.filter((prod) => prod.id.includes(productoid)).map((el)=>(
 
             <ItemDetail 
             key={el.id}
             nombre={el.nombre}
             calificacion={el.calificacion}
-            autor={el.autor}
             img = {el.img}
             categoria = {el.categoria}
-            reseña = {el.reseña}
-            id={el.id}
             valor = {el.valor}
             stock= {el.stock}
-
             />
           ))}
-        
-      
 
-
-        
         </div>
-
     );
-     
-
 }
 
 export default ItemDetailContainer;

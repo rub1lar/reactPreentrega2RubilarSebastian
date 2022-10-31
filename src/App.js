@@ -8,7 +8,8 @@ import Carrousell from "./componentes/Carrousell"
 import Bienvenida from  "./componentes/Bienvenida/Bienvenida";
 import './componentes/Bienvenida/bienvenida.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import ItemDetailContainer from "./componentes/items/ItemDetailContainer"
+import ItemDetailContainer from "./componentes/Items/ItemDetailContainer";
+
 
 function App() {
   return (
@@ -23,9 +24,7 @@ function App() {
       
       <Route path="/" element={<ItemList/>} />
       <Route path="/categoria/:categoria" element={<ItemList/>} />
-      <Route path="/categoria/:productoid" element={<ItemDetailContainer/>} />
-  
-      
+      <Route path="/categoria/:id" element={<ItemDetailContainer/>}/>
       </Routes>
 
     </BrowserRouter>

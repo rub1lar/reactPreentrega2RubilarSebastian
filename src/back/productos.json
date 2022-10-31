@@ -1,3 +1,4 @@
+
 [
     {
         "id": "1",
@@ -5,7 +6,7 @@
         "categoria":"clothes",
         "nombre": " Camiseta Dark",
         "valor": "$50 US",
-        "img": "https://img.freepik.com/free-psd/mockup-half-open-book-standing-light-background_125540-1471.jpg?w=2000",
+        "img":"https://cdn.shopify.com/s/files/1/1014/6323/products/BLINDMIND-TSHIRT-B_06535ac6-00d3-4c98-b032-3bffa579ca99_x1600.jpg?v=1561636552"
     },
     {
         "id": "2",
@@ -13,7 +14,7 @@
         "categoria":"accesories",
         "nombre": " Cartera Calavera",
         "valor": "$20 US",
-        "img": "https://img.freepik.com/free-psd/mockup-half-open-book-standing-light-background_125540-1471.jpg?w=2000",
+        "img": "https://cdn.shopify.com/s/files/1/1014/6323/products/SACRED-MOON-SATCHEL-BAG-W-B_c1a6769a-c238-4fde-b8bb-b8b9df0edd64_x1600.jpg?v=1662372285"
     },
     {
         "id": "3",
@@ -21,7 +22,7 @@
         "categoria":"shoes",
         "nombre": " Botas Cuero",
         "valor": "$150 US",
-        "img": "https://img.freepik.com/free-psd/mockup-half-open-book-standing-light-background_125540-1471.jpg?w=2000",
+        "img": "https://cdn.shopify.com/s/files/1/1014/6323/products/CRESCENT-BOOTS-W-B_x1600.jpg?v=1662372295"
     },
     {
         "id": "4",
@@ -29,6 +30,6 @@
         "categoria":"shoes",
         "nombre": " Botas Largas Negras",
         "valor": "$250 US",
-        "img": "https://img.freepik.com/free-psd/mockup-half-open-book-standing-light-background_125540-1471.jpg?w=2000",
+        "img": "https://cdn.shopify.com/s/files/1/1014/6323/products/FALL-OUT-COMBAT-BOOTS-C_400x600.jpg?v=1643294910"
     }
 ]

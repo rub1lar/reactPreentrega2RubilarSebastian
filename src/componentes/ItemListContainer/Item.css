@@ -16,3 +16,12 @@ align-items: center;
 align-content: center;
 background-color: rgb(52, 64, 80);
 }
+.itemc {
+    padding-top: 1rem;
+    color: aliceblue;
+    background-color: rgb(50, 49, 49) !important;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
