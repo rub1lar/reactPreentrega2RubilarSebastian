@@ -41,11 +41,9 @@ import {useParams} from "react-router-dom";
               categoria={el.categoria}
               img = {el.img}
               valor = {el.valor}
-
               />
      
             ))
-   
           : productos.map((el)=>(
             <Item 
             key={el.id}
@@ -57,8 +55,6 @@ import {useParams} from "react-router-dom";
             />
           ))
           }
-          :
-        
         </div>
 
     );

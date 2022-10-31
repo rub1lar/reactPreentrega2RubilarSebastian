@@ -9,7 +9,7 @@ import Bienvenida from  "./componentes/Bienvenida/Bienvenida";
 import './componentes/Bienvenida/bienvenida.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemDetailContainer from "./componentes/Items/ItemDetailContainer";
-
+import Footer from "./componentes/footer/Footer";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
     <div className="bienvenida">
      <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
       </div>
+
       <Navbarra/><Carrousell/>
       <Routes>
       
@@ -26,28 +27,12 @@ function App() {
       <Route path="/categoria/:categoria" element={<ItemList/>} />
       <Route path="/categoria/:id" element={<ItemDetailContainer/>}/>
       </Routes>
+    
 
     </BrowserRouter>
+<Footer/>
     </>
 
-
-
-
-    /* <div>
-      <div className="bienvenida">
-     <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
-      </div>
-    <div>
-    <Navbarra/>
-    </div>
-
-    <div>
-<Carrousell/>
-    </div>
-
-    <ItemList title="seccion item" description="seccion"/> 
-    </div>
-     */
   );
 }
 export default App;

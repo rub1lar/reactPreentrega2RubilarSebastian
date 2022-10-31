@@ -10,7 +10,7 @@ function Carrousell() {
           alt="First slide"
         />
         <Carousel.Caption>
-        <h3>LOS MEJORES PRECIOS Y LAS MEJORES OFERTAS</h3>
+        <h3>LOS MEJORES PRECIOS</h3>
           <p>NoMercy</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -22,7 +22,7 @@ function Carrousell() {
         />
 
         <Carousel.Caption>
-          <h3>LOS MEJORES PRECIOS Y LAS MEJORES OFERTAS</h3>
+          <h3>LAS MEJORES OFERTAS</h3>
           <p>NoMercy</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -34,7 +34,7 @@ function Carrousell() {
         />
 
         <Carousel.Caption>
-        <h3>LOS MEJORES PRECIOS Y LAS MEJORES OFERTAS</h3>
+        <h3>Solo en No Mercy</h3>
           <p>NoMercy</p>
         </Carousel.Caption>
       </Carousel.Item>
