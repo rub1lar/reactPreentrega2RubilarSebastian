@@ -35,8 +35,9 @@ function ItemDetailContainer() {
 
  return(
         <div >   
-        {loading ? productos : productos.filter((prod) => prod.id.includes(productoid)).map((el)=>(
-
+        {loading ? productos : 
+        productos.filter((prod) => prod.id.includes(productoid)).map((el)=>(
+          
             <ItemDetail 
             key={el.id}
             nombre={el.nombre}
@@ -51,5 +52,6 @@ function ItemDetailContainer() {
         </div>
     );
 }
+
 
 export default ItemDetailContainer;

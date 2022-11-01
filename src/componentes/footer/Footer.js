@@ -6,7 +6,8 @@ const Footer = () => <footer className="page-footer font-small  ">
 
   
     <div className="container-fluid text-center text-md-left bg-dark text-white ">
-            <img className="w-90" src ={imagenfoo2} alt=""></img>
+        <div className="d-inline-flex" > <img src ={imagenfoo2} alt=""></img> </div>
+           
         <div className="row">
             <div className="col-md-6 mt-md-0">
                 <h5 className="text-uppercase pt-3">NoMercy</h5>

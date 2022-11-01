@@ -16,21 +16,19 @@ function App() {
 
     <>
     <BrowserRouter>
-    <div className="bienvenida">
-     <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
-      </div>
+           <div className="bienvenida">
+          <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
+            </div>
 
-      <Navbarra/><Carrousell/>
+            <Navbarra/><Carrousell/>
       <Routes>
-      
       <Route path="/" element={<ItemList/>} />
-      <Route path="/categoria/:categoria" element={<ItemList/>} />
-      <Route path="/categoria/:id" element={<ItemDetailContainer/>}/>
+      <Route path="/categoria/:productoid" element={<ItemDetailContainer/>}/>
       </Routes>
     
-
-    </BrowserRouter>
 <Footer/>
+    </BrowserRouter>
+
     </>
 
   );

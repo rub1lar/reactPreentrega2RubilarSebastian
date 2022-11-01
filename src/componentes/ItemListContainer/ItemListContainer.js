@@ -2,13 +2,12 @@ import React, { Fragment } from 'react'
 import ItemLista from '../Items/ItemList';
 
 
-function ItemList (greeting){
+function ItemList (props){
 return (
   <Fragment>
 
-<div >
 <ItemLista/> 
-</div>
+
 </Fragment>
 )
 

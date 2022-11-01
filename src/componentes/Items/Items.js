@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import "../ItemListContainer/Item.css"
+
  function Item (props) {
     return (
-        <div className= "itemc"> 
+      
+        <div className= "itemc">  
+        
             <div className="w-full max-w-sm  rounded-lg">
                     <img className="p-10 w-50 mx-auto" src={props.img} alt="" />
                 <div className="px-5 pb-5">
@@ -11,7 +14,8 @@ import "../ItemListContainer/Item.css"
                         <span >{props.valor}</span>
                         </div>
                         <div className="flex justify-between items-center">
-                            <NavLink to = {`/${props.categoria}/${props.id}`} >Precio y Detalles!</NavLink> 
+                        <NavLink to =  {`/${props.categoria}/${props.id}`} >Precio y Detalles!</NavLink>
+                           {/*  <NavLink to = {`/${props.categoria}/${props.id}`} >Precio y Detalles!</NavLink>  */}
                     </div>
                 </div>
             </div>
