@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount"
 
 function ItemDetail(props) {
  
-
+    
     return (
              <div className='card md:ml-20 my-5 flex'>
                 
