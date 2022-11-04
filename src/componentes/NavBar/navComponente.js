@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
-
+import {Link} from  "react-router-dom" 
 
 function Navbarra () {
 return (
@@ -25,9 +25,10 @@ return (
             style={{ maxHeight: '130px' }}
           > 
           
-             <a  className="navar" href="#action1">ROPA</a>
-             <a className="navar" href="#action2">ZAPATILLAS</a>
-             <a  className="navar" href="#action3">GORRAS</a>
+             <  Link to = { "/item/clothes"}  className="navar" >ROPA </Link>
+             <  Link to = { "/item/shoes"}  className="navar" >ZAPATILLAS </Link>
+             <  Link to = { "/item/accesories"}  className="navar" >ACCESORIOS </Link>
+      
             
           </Nav>
         

@@ -1,10 +1,11 @@
 import logo from "./marca.png";
-
+import {Link} from "react-router-dom"
 function NoMercy(){
     return (
    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-   <a href="#" >
-<img  src={logo} alt="" className="logo" /></a>
+   <  Link to = { "/"}  className="navar">
+     <img  src={logo} alt="" className="logo" /> </Link>
+
     )
     
     }
