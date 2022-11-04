@@ -40,7 +40,7 @@ return (
               className="me-2"
               aria-label="Search"
             />
-            <Button className="bg-dark btnr">Buscar</Button>
+            <Button id="buscar" className="bg-dark btnr">Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

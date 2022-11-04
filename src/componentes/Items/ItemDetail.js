@@ -15,6 +15,8 @@ function ItemDetail(props) {
                 <div className="px-5 pb-5 text-center">
                     
                         <h5 className="text-xl font-semibold">{props.nombre}</h5>
+                        <h5 className="text-xl font-semibold">{props.categoria}</h5>
+
 
 
                     <div className="flex-col  items-center ml-24">

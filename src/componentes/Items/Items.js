@@ -11,6 +11,8 @@ import "../ItemListContainer/Item.css"
             <div className="w-full max-w-sm  rounded-lg">
                     <img className="p-10 w-50 mx-auto" src={props.img} alt="" />
                 <div className="px-5 pb-5">
+                <h5 className="text-xl font-semibold ">{props.categoria}</h5>
+
                         <h5 className="text-xl font-semibold ">{props.nombre}</h5>
                     <div className="flex justify-between items-center">
                         <span >{props.valor}</span>
