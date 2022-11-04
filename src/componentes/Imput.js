@@ -30,6 +30,13 @@ function Imput(){
       }, 1500);
   });
 }
+useEffect(()=> { 
+
+  setResultadoBusqueda(productos) 
+  
+  }, [productos]) 
+
+  
 useEffect(() => {
   async function fetchedItems(){
     const items = await lista(); 
@@ -38,10 +45,22 @@ useEffect(() => {
 
   fetchedItems()
 }, [] );
+
+
 return ( 
           <div>
             <input id="filter" name ="filter" type="text" value ={filter}onChange={changeHandler}   />
-          
+            { resultadoBusqueda.map((el)=>(
+                <Item 
+               key={el.id}
+               id={el.id}
+                nombre={el.nombre}
+                stock={el.stock}
+                categoria={el.categoria}
+                img = {el.img}
+                valor = {el.valor}
+                />
+              )) }
             { productos.filter((prod) => prod.categoria === categoria).map((el)=>(
                 <Item 
                key={el.id}
