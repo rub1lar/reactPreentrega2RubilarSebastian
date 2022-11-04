@@ -11,7 +11,7 @@ import './componentes/Bienvenida/bienvenida.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemDetailContainer from "./componentes/Items/ItemDetailContainer";
 import Footer from "./componentes/footer/Footer";
-/* import Imput from "./componentes/Imput";  */
+ import Imput from "./componentes/Imput"; 
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
       <Routes>
       <Route path="/" element={<ItemList/>} />
       <Route path="/item/:productoid" element={<ItemDetailContainer/>}/>
+      <Route path="/filtro" element={<Imput/>}/>
       </Routes>
     
 <Footer/>
