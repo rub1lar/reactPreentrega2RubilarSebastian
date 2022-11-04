@@ -7,10 +7,20 @@ import { useEffect } from "react";
 
 function Imput(){
 
-    const [productos, setProductos] = useState();
-    const {categoria} = useParams ();
-    const [filter, setFilter] = useState("");
-  
+  const [productos, setProductos] = useState([]);
+  const {categoria} = useParams ();
+  const [filter, setFilter] = useState("");
+  const [resultadoBusqueda, setResultadoBusqueda]= useState([])
+
+  const filtrar = (itemABuscar) => {
+    //anilizar lo que tengo q filtrar
+    let action = productos.filter((producto)=> producto.nombre.toLowerCase().startsWith(itemABuscar.trim().toLowerCase()))
+    setResultadoBusqueda(action)
+  }
+  const changeHandler= (e) => {
+    setFilter(e.target.value)
+    filtrar(e.target.value)
+  }
   
     const lista = ()=>{ 
       let items = require("../back/productos.json")
@@ -30,7 +40,7 @@ useEffect(() => {
 }, [] );
 return ( 
           <div>
-            <input id="filter" name ="filter" type="text" value ={filter} onChange={(event)=> setFilter(event.target.value)}   />
+            <input id="filter" name ="filter" type="text" value ={filter}onChange={changeHandler}   />
           
             { productos.filter((prod) => prod.categoria === categoria).map((el)=>(
                 <Item 
