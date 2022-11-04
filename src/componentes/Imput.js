@@ -3,6 +3,7 @@
 import { useState } from "react";
 import {useParams} from "react-router-dom";
 import Item from "./Items/Items";
+import { useEffect } from "react";
 
 function Imput(){
 
@@ -29,7 +30,7 @@ useEffect(() => {
 }, [] );
 return ( 
           <div>
-            <Imput id="filter" name ="filter" type="text" value ={filter} onChange={(event)=> setFilter(event.target.value)}   />
+            <input id="filter" name ="filter" type="text" value ={filter} onChange={(event)=> setFilter(event.target.value)}   />
           
             { productos.filter((prod) => prod.categoria === categoria).map((el)=>(
                 <Item 
