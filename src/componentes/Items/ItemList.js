@@ -1,41 +1,5 @@
-
-
-import { useState, useEffect } from "react";
 import Item from "./Items";
-import {useParams} from "react-router-dom";
-
-
- function ItemLista(){
-
-  const [productos, setProductos] = useState();
-
-  const {id} = useParams();
-
-
-  //SIMULACION API
-  const listado = () => {
-    let items = require("../../back/productos.json")
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve(items)
-           
-        }, 1500);
-    })
-  }
-
-  useEffect(() => {
-    async function fetchedItems(){
-      const items = await listado(); 
-      if(id){
-        setProductos(items.filter((prod)=> prod.categoria === id))
-      }else{
-        setProductos(items)
-      }
-      
-    }
-
-    fetchedItems()
-  }, [id] );
+ function ItemLista({productos}){
 
   return ( 
     <div >
@@ -52,4 +16,4 @@ import {useParams} from "react-router-dom";
 
 );
 } 
-export default ItemLista;
+export default ItemLista; 

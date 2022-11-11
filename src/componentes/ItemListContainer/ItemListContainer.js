@@ -3,46 +3,40 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemLista from '../Items/ItemList';
-
-const {id} = useParams
-const [productos, setProductos] = useState;
-
-const listado = () => {
-  let items = require("../../back/productos.json")
-  return new Promise ((resolve, reject) => {
-      setTimeout(() => {
-          resolve(items)
-      }, 1500);
-  })
-}
-useEffect(() => {
-  async function fetchedItems(){
-    const items = await listado(); 
-    setProductos(items)
+function ItemListContainer (props){
+  const [productos, setProductos] = useState([]);
+  const {id} = useParams();
+  //SIMULACION API
+  const listado = () => {
+    let items = require("../../back/productos.json")
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            resolve(items)
+           
+        }, 1500);
+    })
   }
 
-  fetchedItems()
-}, [] );
+  useEffect(() => {
+    async function fetchedItems(){
+      const items = await listado(); 
+      if(id){
+        setProductos(items.filter((prod)=> prod.categoria === id))
+      }else{
+        setProductos(items)
+      }
+      
+    }
 
-const arrayFiltrado = productos.filter( x => x.category === id );
-
-
-function ItemListContainer (props){
-
-
-
+    fetchedItems()
+  }, [id] );
 
 return (
   <Fragment>
-
-<ItemLista/> 
-
+<ItemLista productos={productos}/> 
 </Fragment>
 )
 
 }
-
-
-
 
 export default ItemListContainer;

@@ -4,7 +4,7 @@
         "id": "1",
         "stock": "1234342",
         "categoria":"clothes",
-        "nombre": " Camiseta Dark",
+        "nombre": "Camiseta Dark",
         "valor": "$50 US",
         "img":"https://cdn.shopify.com/s/files/1/1014/6323/products/BLINDMIND-TSHIRT-B_06535ac6-00d3-4c98-b032-3bffa579ca99_x1600.jpg?v=1561636552"
     },
@@ -12,7 +12,7 @@
         "id": "2",
         "stock": "13434",
         "categoria":"accesories",
-        "nombre": " Cartera Calavera",
+        "nombre": "Cartera Calavera",
         "valor": "$20 US",
         "img": "https://cdn.shopify.com/s/files/1/1014/6323/products/SACRED-MOON-SATCHEL-BAG-W-B_c1a6769a-c238-4fde-b8bb-b8b9df0edd64_x1600.jpg?v=1662372285"
     },
@@ -20,7 +20,7 @@
         "id": "3",
         "stock": "1522",
         "categoria":"shoes",
-        "nombre": " Botas Cuero",
+        "nombre": "Botas Cuero",
         "valor": "$150 US",
         "img": "https://cdn.shopify.com/s/files/1/1014/6323/products/CRESCENT-BOOTS-W-B_x1600.jpg?v=1662372295"
     },
@@ -28,7 +28,7 @@
         "id": "4",
         "stock": "1234324",
         "categoria":"shoes",
-        "nombre": " Botas Largas Negras",
+        "nombre": "Botas Largas Negras",
         "valor": "$250 US",
         "img": "https://cdn.shopify.com/s/files/1/1014/6323/products/FALL-OUT-COMBAT-BOOTS-C_400x600.jpg?v=1643294910"
     }
