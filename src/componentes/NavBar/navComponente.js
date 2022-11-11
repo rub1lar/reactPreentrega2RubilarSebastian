@@ -25,9 +25,9 @@ return (
             style={{ maxHeight: '130px' }}
           > 
           
-             <  Link to = { "/item/clothes"}  className="navar" >ROPA </Link>
-             <  Link to = { "/item/shoes"}  className="navar" >ZAPATILLAS </Link>
-             <  Link to = { "/item/accesories"}  className="navar" >ACCESORIOS </Link>
+             <  Link to = { "/category/clothes"}  className="navar" >ROPA </Link>
+             <  Link to = { "/category/shoes"}  className="navar" >ZAPATILLAS </Link>
+             <  Link to = { "/category/accesories"}  className="navar" >ACCESORIOS </Link>
       
             
           </Nav>

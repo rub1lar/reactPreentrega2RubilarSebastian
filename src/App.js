@@ -2,7 +2,7 @@
 
 import Navbarra from "./componentes/NavBar/navComponente";
 import  "./componentes/NavBar/nav.css";
-import ItemList from  "./componentes/ItemListContainer/ItemListContainer";
+import ItemListContainer from  "./componentes/ItemListContainer/ItemListContainer";
 import './componentes/ItemListContainer/Item.css';
 import "./componentes/CartWidget/carrito.css"
 import Carrousell from "./componentes/Carrousell"
@@ -26,7 +26,8 @@ function App() {
       
        
       <Routes>
-      <Route path="/" element={<ItemList/>} />
+      <Route path="/" element={<ItemListContainer/>} />
+      <Route path="/category/:id" element={<ItemListContainer/>} />
       <Route path="/item/:productoid" element={<ItemDetailContainer/>}/>
       <Route path="/filtro" element={<Imput/>}/>
       </Routes>

@@ -8,8 +8,8 @@ import {useParams} from "react-router-dom";
  function ItemLista(){
 
   const [productos, setProductos] = useState();
-  const [loading, isLoading] = useState(false)
-  const {categoria} = useParams();
+
+  const {id} = useParams();
 
 
   //SIMULACION API
@@ -18,49 +18,38 @@ import {useParams} from "react-router-dom";
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             resolve(items)
-            isLoading(true)
+           
         }, 1500);
     })
   }
+
   useEffect(() => {
     async function fetchedItems(){
       const items = await listado(); 
-      setProductos(items)
+      if(id){
+        setProductos(items.filter((prod)=> prod.categoria === id))
+      }else{
+        setProductos(items)
+      }
+      
     }
 
     fetchedItems()
-  }, [] );
+  }, [id] );
 
-    return ( 
-        <div >
-      
-          {!loading ? 
-            productos : categoria? productos.filter((prod) => prod.categoria === categoria).map((el)=>(
-              <Item 
-             key={el.id}
-             id={el.id}
-              nombre={el.nombre}
-              stock={el.stock}
-              categoria={el.categoria}
-              img = {el.img}
-              valor = {el.valor}
-              />
-     
-            ))
-          : productos.map((el)=>(
-            <Item 
-            key={el.id}
-            id={el.id}
-              nombre={el.nombre}
-              stock={el.stock}
-              categoria={el.categoria}
-              img = {el.img}
-              valor = {el.valor}
-            />
-          ))
-          }
-        </div>
+  return ( 
+    <div >
+      {productos.map((el)=> <Item 
+        key={el.id}
+        id={el.id}
+          nombre={el.nombre}
+          stock={el.stock}
+          categoria={el.categoria}
+          img = {el.img}
+          valor = {el.valor}
+        />)}
+    </div>
 
-    );
+);
 } 
 export default ItemLista;
