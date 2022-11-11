@@ -14,7 +14,7 @@ function Imput(){
 
   const filtrar = (itemABuscar) => {
     //anilizar lo que tengo q filtrar
-    let action = productos.filter((producto)=> producto.nombre.toLowerCase().startsWith(itemABuscar.trim().toLowerCase()))
+    let action = productos.filter((producto)=> producto.nombre.trim.toLowerCase().startsWith(itemABuscar.trim().toLowerCase()))
     setResultadoBusqueda(action)
   }
   const changeHandler= (e) => {
