@@ -1,7 +1,6 @@
 
 import ItemCount from "./ItemCount"
 import  "./detail.css"
-import {logo} from "./logo1.png"
 import { useState, useContext } from 'react'
 import CartContext from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
@@ -48,7 +47,7 @@ function ItemDetail(props) {
             : 
             <div className=" ml-30 mt-9 fill-neutral-200 flex justify-center">
             <NavLink to={`/cart`} > <button type="button">
-      <img  src={logo}></img> </button> </NavLink>
+      <img  src={""}></img> </button> </NavLink>
 </div> }
        
        

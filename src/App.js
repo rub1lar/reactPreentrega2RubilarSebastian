@@ -13,6 +13,7 @@ import ItemDetailContainer from "./componentes/Items/ItemDetailContainer";
 import Footer from "./componentes/footer/Footer";
  import Imput from "./componentes/Imput"; 
  import  { CartProvider } from './Context/CartContext';
+import Cart from "./componentes/Cart";
 
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
       <Route path="/category/:id" element={<ItemListContainer/>} />
       <Route path="/item/:productoid" element={<ItemDetailContainer/>}/>
       <Route path="/filtro" element={<Imput/>}/>
+      <Route path='/cart' element={<Cart />} />
+
    
       </Routes>
     

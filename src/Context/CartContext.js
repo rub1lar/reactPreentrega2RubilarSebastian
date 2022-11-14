@@ -6,6 +6,7 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
+    console.log(cart);
     const carritoProv = cart
    
     

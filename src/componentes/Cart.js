@@ -1,25 +1,24 @@
-import Item from "./Items";
-import { CartContext } from "./Context/CartContext";
+import CartItem from "./CartItem";
+import CartContext from "../Context/CartContext";
+import { useContext } from "react";
 
+function Cart() {
+    const { cart } = useContext(CartContext);
 
-const {cart} = useContext(
-    CartContext);
-
- function Cart({productos}){
-
-  return ( 
-    <div >
-      {productos.cart((el)=> <Item 
-        key={el.id}
-        id={el.id}
-          nombre={el.nombre}
-          stock={el.stock}
-          categoria={el.categoria}
-          img = {el.img}
-          valor = {el.valor}
-        />)}
-    </div>
-
-);
-} 
-export default Cart;  
+    return (
+        <div>
+            {cart.map((el) => (
+                <CartItem
+                  
+                    id={el.id}
+                    nombre={el.nombre}
+                    stock={el.stock}
+                    categoria={el.categoria}
+                    img={el.img}
+                    valor={el.valor}
+                />
+            ))}
+        </div>
+    );
+}
+export default Cart;
