@@ -1,6 +1,8 @@
 import React from "react"
 import imagenfoo from "./footer.png"
 import imagenfoo2 from "./666.webp"
+import {Link} from  "react-router-dom" 
+
 
 const Footer = () => <footer className="page-footer font-small  ">
 
@@ -19,10 +21,10 @@ const Footer = () => <footer className="page-footer font-small  ">
             <div className="col-md-3 mb-md-0">
                 <h5 className="text-uppercase  pt-3">Que Buscas?</h5>
                 <ul className="list-unstyled text-decoration-none ">
-                    <li><a className=" text-decoration-none text-white" href="#!">ROPA</a></li>
-                    <li><a className=" text-decoration-none text-white" href="#!">ZAPATILLAS</a></li>
-                    <li><a className=" text-decoration-none text-white" href="#!">ACCESORIOS</a></li>
-                    <li><a className=" text-decoration-none text-white" href="#!">CONTACTO</a></li>
+                    <li>  <  Link to = { "/category/Ropa"}  className="navar" >ROPA </Link></li>
+                    <li> <  Link to = { "/category/Zapatillas"}  className="navar" >ZAPATILLAS </Link></li>
+                    <li><  Link to = { "/category/Accesorios"}  className="navar" >ACCESORIOS </Link></li>
+                    <li>  <  Link to = "/filtro"  className="navar" >BUSCAR </Link>  </li>
                 </ul>
 
             </div>

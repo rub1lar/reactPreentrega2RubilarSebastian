@@ -12,11 +12,14 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemDetailContainer from "./componentes/Items/ItemDetailContainer";
 import Footer from "./componentes/footer/Footer";
  import Imput from "./componentes/Imput"; 
+ import  { CartProvider } from './Context/CartContext';
+
 
 function App() {
   return (
 
     <>
+      <CartProvider>
     <BrowserRouter>
            <div className="bienvenida">
           <Bienvenida  bienvenida="Bienvenidos A NoMercy!" description="seccion0"/> 
@@ -30,11 +33,12 @@ function App() {
       <Route path="/category/:id" element={<ItemListContainer/>} />
       <Route path="/item/:productoid" element={<ItemDetailContainer/>}/>
       <Route path="/filtro" element={<Imput/>}/>
+   
       </Routes>
     
 <Footer/>
     </BrowserRouter>
-
+    </CartProvider>
     </>
 
   );

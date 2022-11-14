@@ -1,11 +1,28 @@
-import logo from "./logo1.png";
+
 import "./carrito.css"
-function Cart(){
-    return (
-   // eslint-disable-next-line jsx-a11y/anchor-is-valid
-   <a href="#" >
-<img  className="carrito" src={logo} alt=""  /></a>
-    )
-    
-    }
-    export default Cart;
+import { NavLink } from "react-router-dom";
+import CartContext from "../../Context/CartContext";
+import { useContext, useState, useEffect } from 'react'
+import logo from "../Items/logo1.png"
+function CartWidget() {
+  const { cart, addItem } = useContext(CartContext)
+  const [cartLength, setCartLength] = useState(0);
+
+  useEffect(() => {
+    console.log("Se ha agregado o removido algo al carrito")
+    setCartLength(cart.length)
+  }, [cart, addItem])
+  return (
+    <NavLink to={`/cart`} > <button type="button">
+      <img src={logo}></img>
+      {cartLength > 0 ?
+        <div className="inline-flex absolute -top-2 -right-2 justify-center items-center ">{cartLength}</div>
+        : <></>}
+    </button></NavLink>
+
+
+
+  );
+}
+
+export default CartWidget;
