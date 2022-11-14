@@ -47,6 +47,7 @@ function ItemDetailContainer() {
             calificacion={el.calificacion}
             img = {el.img}
             categoria = {el.categoria}
+            detalle = {el.detalle}
             valor = {el.valor}
             stock= {el.stock}
             />

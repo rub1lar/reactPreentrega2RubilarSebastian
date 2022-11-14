@@ -1,3 +1,11 @@
 .detail {
-background-color: black;
+    background-color: black;
+    }
+    .detail2 {
+    background-color: black;
+        max-width: 300px!important;
+    
+        }
+.inline-flex{
+    display: inline-flex!important;
 }

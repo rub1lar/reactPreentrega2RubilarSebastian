@@ -19,7 +19,7 @@ import "../ItemListContainer/Item.css"
                         </div>
                         <div className="flex justify-between items-center">
                         <NavLink to =  {`/item/${props.id}`} >Precio y Detalles!</NavLink>
-                           {/*  <NavLink to = {`/${props.categoria}/${props.id}`} >Precio y Detalles!</NavLink>  */}
+        
                     </div>
                 </div>
             </div>
