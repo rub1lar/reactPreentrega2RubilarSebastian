@@ -10,6 +10,7 @@ const CartProvider = ({children}) => {
     const carritoProv = cart
    
     
+    
     const addItem = (item, cantidad) => {
         
         if (!isInCart(item.id)) {
@@ -26,14 +27,12 @@ const CartProvider = ({children}) => {
             setCart(carritoProv)
             
         } else if (isInCart) {
-            const posItem = carritoProv.findIndex(libro => libro.id === item.id)
+            const posItem = carritoProv.findIndex(producto => producto.id === item.id)
             carritoProv[posItem].cantidad = cantidad; 
             setCart(carritoProv)
         }
     }
-    
     const removeItem = (item) => {
-        
         const newProducts = cart.filter((p) => p.id !== item.id);
 
         setCart(newProducts);

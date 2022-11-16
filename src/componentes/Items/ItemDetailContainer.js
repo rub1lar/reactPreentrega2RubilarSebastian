@@ -42,9 +42,9 @@ function ItemDetailContainer() {
         productos.filter((prod) => prod.id.includes(productoid)).map((el)=>(
           
             <ItemDetail 
+            id= {el.id}
             key={el.id}
             nombre={el.nombre}
-            calificacion={el.calificacion}
             img = {el.img}
             categoria = {el.categoria}
             detalle = {el.detalle}

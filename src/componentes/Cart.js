@@ -9,7 +9,6 @@ function Cart() {
         <div>
             {cart.map((el) => (
                 <CartItem
-                  
                     id={el.id}
                     nombre={el.nombre}
                     stock={el.stock}

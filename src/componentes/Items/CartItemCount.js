@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 
-export default function ItemCount({ stock, initial, funcion, libro}) {
+export default function ItemCount({ stock, initial, funcion, producto}) {
     const [value, setValue] = useState(initial);
 
     function onAdd() {
@@ -14,7 +14,7 @@ export default function ItemCount({ stock, initial, funcion, libro}) {
     }
 
     useEffect(() => {
-        funcion(value, libro);
+        funcion(value, producto);
       
     }, [value])
     
