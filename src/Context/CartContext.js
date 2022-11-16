@@ -15,10 +15,11 @@ const CartProvider = ({children}) => {
         if (!isInCart(item.id)) {
             
             const producto = {
+                "img":item.img,
                 "id": item.id,
                 "nombre": item.nombre,
                 "valor": item.valor,
-                "cantidad": cantidad,
+                "cantidad":cantidad,
                 "stock": item.stock
             }
 
