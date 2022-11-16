@@ -3,7 +3,7 @@ import ItemCount from "./ItemCount"
 import  "./detail.css"
 import { useState, useContext } from 'react'
 import CartContext from '../../Context/CartContext'
-import {NavLink} from 'react-router-dom'
+
 function ItemDetail(props) {
     const { addItem } = useContext(CartContext)
 

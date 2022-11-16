@@ -2,10 +2,11 @@
 import CartContext from "../Context/CartContext";
 import { useContext } from "react";
 import "./ItemListContainer/Item.css"
-import { clear } from "@testing-library/user-event/dist/clear";
+
 
  function CartItem (props) {
     const { removeItem } = useContext(CartContext);
+    const {clear} = useContext(CartContext);
 
     return (
       
@@ -23,7 +24,7 @@ import { clear } from "@testing-library/user-event/dist/clear";
                     <div className="flex justify-between items-center">
                         <span >{props.valor}</span>
                         <button onClick={removeItem(props.id)}>remover </button>
-                        <button onClick={clear}> borrar todo</button>
+              
 
                     
 
