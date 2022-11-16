@@ -1,7 +1,8 @@
 
 import CartContext from "../Context/CartContext";
-
+import { useContext } from "react";
 import "./ItemListContainer/Item.css"
+import { clear } from "@testing-library/user-event/dist/clear";
 
  function CartItem (props) {
     const { removeItem } = useContext(CartContext);
@@ -13,7 +14,7 @@ import "./ItemListContainer/Item.css"
             <div className="w-full max-w-sm  rounded-lg">
                 <div className="px-5 pb-5">
                 <h5 className="text-xl font-semibold ">{props.categoria}</h5>
-                <h5 className="text-xl font-semibold ">{props.CartItemcantidad}</h5>
+                <h5 className="text-xl font-semibold ">{props.cantidad}</h5>
             
 
 
@@ -21,7 +22,11 @@ import "./ItemListContainer/Item.css"
                     <img className="p-10 w-50 mx-auto" src={props.img} alt="" />
                     <div className="flex justify-between items-center">
                         <span >{props.valor}</span>
-                        <button onClick={removeItem}> </button>
+                        <button onClick={removeItem(props.id)}>remover </button>
+                        <button onClick={clear}> borrar todo</button>
+
+                    
+
                         </div>
                       
                 </div>
