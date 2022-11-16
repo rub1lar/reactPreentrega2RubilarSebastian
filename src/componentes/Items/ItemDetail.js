@@ -46,23 +46,23 @@ function ItemDetail(props) {
                     {!cargado ? <ItemCount stock={props.stock} initial={1} funcion={onAdd} />
             : 
             <div className=" ml-30 mt-9 fill-neutral-200 flex justify-center">
-            <NavLink to={`/cart`} > <button type="button">
-      <img  src={""}></img> </button> </NavLink>
+       {/*      <NavLink to={`/cart`} > <button type="button">
+      <img  src={""}></img> </button> </NavLink> */}
 </div> }
        
        
-                <div className=" ml-30 mt-9 fill-neutral-200 flex justify-center">
+   {/*              <div className=" ml-30 mt-9 fill-neutral-200 flex justify-center">
             <NavLink to={`/cart`} > <button type="button" className="inline-flex relative items-center p-3 text-sm 
                 font-medium text-center text-white  rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 ">
       <img className="h-14 mx-4 cursor-pointer" src="" ></img> </button> </NavLink>
-</div> 
+</div>  */}
                 </div>
             </div>
 
             <div className="w-full max-w-sm pt-3 bg-white dark:bg-gray-800 dark:border-gray-700">
 
                 <div className="px-5 pb-5 mt-10">
-                    <button className="text-white font-bold ml-20 mt-6 rounded-full bg-red-700 p-2 hover:bg-red-500" onClick={() => agregarCarrito(props)}> Agregar al carrito</button>
+                    <button className="item-center font-bold ml-20 mt-6 rounded-full bg-red-700 p-2 hover:bg-red-500" onClick={() => agregarCarrito(props)}> Agregar al carrito</button>
 
                 </div>
             </div>
