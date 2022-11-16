@@ -1,8 +1,11 @@
 
+import CartContext from "../Context/CartContext";
 
 import "./ItemListContainer/Item.css"
 
  function CartItem (props) {
+    const { removeItem } = useContext(CartContext);
+
     return (
       
         <div className= "itemc">  
@@ -18,6 +21,7 @@ import "./ItemListContainer/Item.css"
                     <img className="p-10 w-50 mx-auto" src={props.img} alt="" />
                     <div className="flex justify-between items-center">
                         <span >{props.valor}</span>
+                        <button onClick={removeItem}> </button>
                         </div>
                       
                 </div>
