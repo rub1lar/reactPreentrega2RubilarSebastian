@@ -21,12 +21,12 @@ export default function CartItemCount({ stock, initial, funcion, producto}) {
     return (
      
           <div>
-            <h1 className=' font-bold mt-2'>Stock Actual: {stock}</h1>
+          {/*   <h1 className=' font-bold mt-2'>Stock Actual: {stock}</h1>
             <div className='inline-flex '>
                 <button className=" h-7 w-7 p-1 hover:bg-slate-700 rounded-full mx-3" onClick={onSubstract}>-</button>
                 <h1 className=' font-bold mx-5 text-xl'>{value}</h1>
                 <button className="  h-7 w-7 hover:bg-slate-700  rounded-full  mx-3" onClick={onAdd}>+</button>
-            </div>
+            </div> */}
         </div>
     );
 

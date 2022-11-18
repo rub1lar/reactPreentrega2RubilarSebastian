@@ -27,7 +27,7 @@ function Cart(props) {
                     <button className="  m-3" onClick={() => clear(props.id)}>
                             VACIAR CARRITO
                         </button>
-                        <h4 className="  m-3"> TOTAL DE PRODUCTOS: {}</h4 >  <h4 className="  m-3"> TOTAL DE LA COMPRA:${}</h4>
+                        <h4 className="  m-3"> TOTAL DE LA COMPRA:${}</h4>
                 <button className="items-center m-3" onClick={() => (props.id)}>
               FINALIZAR COMPRA
            </button>

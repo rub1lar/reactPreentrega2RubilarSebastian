@@ -30,11 +30,22 @@ const CartProvider = ({children}) => {
             setCart(carritoProv)
         }
     }
-    const removeItem = (productos) => {
+    
+    const removeItem =(id) => { 
+        setCart(cart.filter((prod)=> prod.id !== id))
+         }
+
+
+         const cartQuantity = () => {
+            return cart.reduce((acc, prod) => acc += prod.cantidad,0)
+        }
+    
+    
+    
+    /* (productos) => {
         const newProducts = cart.filter((p) => p.id !== productos.id);
         setCart(newProducts);
-    }
-    
+    } */
     const clear = () => {
         setCart([])
         
