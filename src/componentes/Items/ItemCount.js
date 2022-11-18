@@ -7,7 +7,7 @@ import  "./detail.css"
 
 
 
-export default function ItemCount({ stock, initial }) {
+export default function ItemCount({ stock, initial, agregarCarrito }) {
     console.log("PROPS DE ITEM COUNT: ", initial, stock, onAdd)
     const [value, setValue] = useState(initial);
     const {addItem} = useContext(CartContext);
@@ -30,6 +30,7 @@ export default function ItemCount({ stock, initial }) {
                 <h1 className='text-white font-bold mx-5 text-xl'>{value}</h1>
                 <button className="fill-white  h-7 w-7 hover:bg-slate-700  rounded-full  mx-3" onClick={onAdd}>+</button>
             </div>
+            <button onClick={() => agregarCarrito(value)}> Agregar al carrito</button>   
 
         </div>
     );
