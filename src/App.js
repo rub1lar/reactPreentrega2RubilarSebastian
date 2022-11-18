@@ -15,7 +15,6 @@ import Footer from "./componentes/footer/Footer";
  import  { CartProvider } from './Context/CartContext';
 import Cart from "./componentes/Cart";
 
-
 function App() {
   return (
 
@@ -35,7 +34,7 @@ function App() {
       <Route path="/item/:productoid" element={<ItemDetailContainer/>}/>
       <Route path="/filtro" element={<Imput/>}/>
       <Route path='/cart' element={<Cart />} />
-
+      
    
       </Routes>
     

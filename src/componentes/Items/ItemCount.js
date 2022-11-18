@@ -1,14 +1,21 @@
 import React from 'react'
+import { useContext } from 'react';
 import { useState } from 'react'
+import CartContext from '../../Context/CartContext';
 import  "./detail.css"
+
+
 
 
 export default function ItemCount({ stock, initial }) {
     console.log("PROPS DE ITEM COUNT: ", initial, stock, onAdd)
     const [value, setValue] = useState(initial);
+    const {addItem} = useContext(CartContext);
+    
+    function onAdd(cantidad) {
 
-    function onAdd() {
-        (stock) > value ? setValue(value + 1) : setValue(value + 0);
+
+        (stock) > value ? setValue(value + 1) : setValue(value + 0); 
     }
 
     function onSubstract() {

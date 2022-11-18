@@ -17,11 +17,10 @@ function ItemDetail(props) {
         setCantidad(numero);
     }
 
-    function agregarCarrito(producto) {
+    function agregarCarrito(productos) {
         
-        addItem(producto, cantidad)
+        addItem(productos, cantidad)
         estaCargado(true)
-
 
     }
 

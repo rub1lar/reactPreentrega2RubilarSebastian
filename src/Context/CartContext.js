@@ -7,33 +7,31 @@ const CartContext = createContext();
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
     const carritoProv = cart
-   
-    
-    
-    const addItem = (item, cantidad) => {
-        
-        if (!isInCart(item.id)) {
-            
-            const producto = {
-                "img":item.img,
-                "id": item.id,
-                "nombre": item.nombre,
-                "valor": item.valor,
-                "cantidad":cantidad,
-                "stock": item.stock
-            }
 
+
+    const addItem = (productos, cantidad) => {
+
+        if (!isInCart(productos.id)) {
+              console.log (productos , cantidad)
+            const producto = {
+                "id": productos.id,
+                "img":productos.img,
+                "nombre": productos.nombre,
+                "valor": productos.valor,
+                "cantidad":cantidad,
+                "stock": productos.stock
+            }
             carritoProv.push(producto)
             setCart(carritoProv)
             
         } else if (isInCart) {
-            const posItem = carritoProv.findIndex(producto => producto.id === item.id)
+            const posItem = carritoProv.findIndex(producto => producto.id === productos.id)
             carritoProv[posItem].cantidad = cantidad; 
             setCart(carritoProv)
         }
     }
-    const removeItem = (item) => {
-        const newProducts = cart.filter((p) => p.id !== item.id);
+    const removeItem = (productos) => {
+        const newProducts = cart.filter((p) => p.id !== productos.id);
         setCart(newProducts);
     }
     

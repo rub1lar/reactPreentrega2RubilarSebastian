@@ -1,11 +1,14 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useContext } from 'react';
+import { useState} from 'react'
+import CartContext from '../../Context/CartContext';
 
 
-export default function ItemCount({ stock, initial, funcion, producto}) {
+export default function CartItemCount({ stock, initial, funcion, producto}) {
     const [value, setValue] = useState(initial);
 
-    function onAdd() {
+
+    function onAdd(cantidad) {
         (stock) > value ? setValue(value + 1) : setValue(value + 0);
     }
 
@@ -13,20 +16,17 @@ export default function ItemCount({ stock, initial, funcion, producto}) {
         value > 1 ? setValue(value - 1) : setValue(value + 0);
     }
 
-    useEffect(() => {
-        funcion(value, producto);
-      
-    }, [value])
     
     
     return (
-        <div className="invert">
-            <div className='flex justify-center my-4'>
-                <button className="fill-white h-8 w-7 p-1 hover:bg-slate-700 rounded-full mx-3" onClick={onSubstract}>sustraer</button>
-                <h1 >{value}</h1>
-                <button onClick={onAdd}>adderir</button>
+     
+          <div>
+            <h1 className=' font-bold mt-2'>Stock Actual: {stock}</h1>
+            <div className='inline-flex '>
+                <button className=" h-7 w-7 p-1 hover:bg-slate-700 rounded-full mx-3" onClick={onSubstract}>-</button>
+                <h1 className=' font-bold mx-5 text-xl'>{value}</h1>
+                <button className="  h-7 w-7 hover:bg-slate-700  rounded-full  mx-3" onClick={onAdd}>+</button>
             </div>
-
         </div>
     );
 
