@@ -4,7 +4,7 @@ import "./ItemListContainer/Item.css";
 import CartItemCount from "./Items/CartItemCount";
 
 function CartItem(props) {
-    const { removeItem } = useContext(CartContext);
+    const { removeItem , quitarUna } = useContext(CartContext);
 
 
     return (
@@ -21,9 +21,10 @@ function CartItem(props) {
                         <span>${props.valor}</span>
                         {<CartItemCount stock={props.stock} initial={1}  />}
 
-                        <button onClick={() => removeItem(props)}>
+                        <button onClick={() => removeItem(props.id)}>
                             Remover Toda Esta Categoria
                         </button>   
+
                         <button onClick={() => quitarUna (props.id)}>
                             Borrar una Unidad
                         </button>   
