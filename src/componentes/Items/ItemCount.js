@@ -13,8 +13,6 @@ export default function ItemCount({ stock, initial, agregarCarrito }) {
 
     
     function onAdd(cantidad) {
-
-
         (stock) > value ? setValue(value + 1) : setValue(value + 0); 
     }
 

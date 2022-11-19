@@ -5,8 +5,8 @@ import { useContext } from "react";
 
 
 function Cart(props) {
-    const { cart } = useContext(CartContext);
-    const { clear } = useContext(CartContext);
+    const { cart, clear, cartQuantity } = useContext(CartContext);
+    console.log(cart, 'vista cart')
     return (
         <div>
               <div>
@@ -14,7 +14,7 @@ function Cart(props) {
                 <CartItem
                 id={el.id}
                 key={el.id}
-
+                cantidad={el.cantidad}
                 nombre={el.nombre}
                 stock={el.stock}
                 categoria={el.categoria}
@@ -23,10 +23,11 @@ function Cart(props) {
                 />
                 ))}  
                     </div> 
-<div className= "inline-flex">
-                    <button className="  m-3" onClick={() => clear(props.id)}>
+                    <div className= "inline-flex">
+                    <button className="  m-3" onClick={() => clear()}>
                             VACIAR CARRITO
                         </button>
+                        <h4 className="  m-3"> TOTAL DE ITEMS:{cartQuantity()}</h4>
                         <h4 className="  m-3"> TOTAL DE LA COMPRA:${}</h4>
                 <button className="items-center m-3" onClick={() => (props.id)}>
               FINALIZAR COMPRA

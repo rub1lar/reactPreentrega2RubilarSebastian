@@ -4,9 +4,9 @@ import "./ItemListContainer/Item.css";
 import CartItemCount from "./Items/CartItemCount";
 
 function CartItem(props) {
-    const { removeItem , quitarUna } = useContext(CartContext);
+    const { removeItem, quitarUna } = useContext(CartContext);
 
-
+    console.log(props, 'cartItem')
     return (
         <div className='itemc'>
             <div className='w-full max-w-sm  rounded-lg'>
@@ -24,10 +24,9 @@ function CartItem(props) {
                         <button onClick={() => removeItem(props.id)}>
                             Remover Toda Esta Categoria
                         </button>   
-
-                        <button onClick={() => quitarUna (props.id)}>
+                       {props.cantidad > 1 &&  <button  onClick={() => quitarUna (props.id)}>
                             Borrar una Unidad
-                        </button>   
+                        </button>   }
                     </div>
                 </div>
             </div>
