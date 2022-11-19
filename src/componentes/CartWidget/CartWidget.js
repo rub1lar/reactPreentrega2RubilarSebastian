@@ -1,25 +1,18 @@
-
 import "./carrito.css"
 import { NavLink } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
-import { useContext, useState, useEffect } from 'react'
-
+import { useContext } from 'react'
+import logo from "./logo1.png"
 
 function CartWidget() {
-  const { cart, addItem } = useContext(CartContext)
-  const [cartLength, setCartLength] = useState(0);
-
-  useEffect(() => {
-    console.log("Se ha agregado o removido algo al carrito")
-    setCartLength(cart.length)
-  }, [cart, addItem])
+  const { cartQuantity} = useContext(CartContext)
+  
   return (
     <NavLink to={`/cart`} ><button type="button">
-     
-      {cartLength > 0 ?
+        {<p>Icono del carrito</p>}
         <div className="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6
-          text-xs font-bold  bg-red-500 rounded-full border-1 border-white dark:border-gray-900">{cartLength}</div>
-        : <></>}
+          text-xs font-bold  bg-red-500 rounded-full border-1 border-white dark:border-gray-900">{cartQuantity() || ''}</div>
+        
     </button></NavLink>
 
   );
