@@ -2,7 +2,7 @@ import ItemCount from "./ItemCount";
 import "./detail.css";
 import { useState, useContext } from "react";
 import CartContext from "../../Context/CartContext";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function ItemDetail(props) {
   const { addItem } = useContext(CartContext);
@@ -29,7 +29,7 @@ function ItemDetail(props) {
           <span className=" font-bold"> Precio : {props.valor} </span>
           {!cargado ? (
             <ItemCount stock={props.stock} initial={1} agregarCarrito={agregarCarrito} />
-          ) : <link to= "/Cart"> Ir al carrito</link>
+          ) : <Link to= "/Cart"> Ir al carrito</Link>
            }
         </div>
       </div>

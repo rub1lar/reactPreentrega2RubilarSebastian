@@ -10,7 +10,7 @@ import  "./detail.css"
 export default function ItemCount({ stock, initial, agregarCarrito }) {
     console.log("PROPS DE ITEM COUNT: ", initial, stock, onAdd)
     const [value, setValue] = useState(initial);
-    const {addItem} = useContext(CartContext);
+
     
     function onAdd(cantidad) {
 

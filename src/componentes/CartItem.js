@@ -24,7 +24,7 @@ function CartItem(props) {
                         <button onClick={() => removeItem(props)}>
                             Remover Toda Esta Categoria
                         </button>   
-                        <button onClick={() => removeItem(props.id)}>
+                        <button onClick={() => quitarUna (props.id)}>
                             Borrar una Unidad
                         </button>   
                     </div>

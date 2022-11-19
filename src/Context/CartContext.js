@@ -10,10 +10,8 @@ const CartProvider = ({children}) => {
 
 
     const addItem = (productos, cantidad) => {
-
         if (!isInCart(productos.id)) {
-              console.log (productos , cantidad)
-            const producto = {
+                const producto = {
                 "id": productos.id,
                 "img":productos.img,
                 "nombre": productos.nombre,
@@ -21,16 +19,18 @@ const CartProvider = ({children}) => {
                 "cantidad":cantidad,
                 "stock": productos.stock
             }
-            carritoProv.push(producto)
-            setCart(carritoProv)
-            
-        } else if (isInCart) {
-            const posItem = carritoProv.findIndex(producto => producto.id === productos.id)
-            carritoProv[posItem].cantidad = cantidad; 
-            setCart(carritoProv)
+            setCart([...cart,producto])     
+        } else {
+            const cartAux = cart.map(p =>{
+                if(p.id===productos.id){
+                    const newProd = {...productos,cantidad:p.cantidad+cantidad}
+                    return newProd
+                }
+                return p
+            })
+            setCart(cartAux)
         }
     }
-    
     const removeItem =(id) => { 
         setCart(cart.filter((prod)=> prod.id !== id))
          }
@@ -39,7 +39,16 @@ const CartProvider = ({children}) => {
          const cartQuantity = () => {
             return cart.reduce((acc, prod) => acc += prod.cantidad,0)
         }
-    
+        const quitarUna= (id) => {
+            const cartAux = cart.map(p =>{
+              if(p.id===id){
+                  const newProd = {...p,cantidad:p.cantidad-1}
+                  return newProd
+              }
+              return p
+          })
+          setCart(cartAux)
+      }
     
     
     /* (productos) => {
