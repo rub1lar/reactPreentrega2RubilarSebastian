@@ -5,35 +5,29 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
  
+import {collection ,doc ,getDocs , getFirestore, query , where } from "firebase/firestore"
 
 
 function ItemDetailContainer() {
 
     const {productoid} = useParams();
-    const [productos, setProductos] = useState();
+    const [productos, setProductos] = useState([]);
   const [loading, isLoading] = useState(true)
-
-  //SIMULACION API
-  
-  const getItem = () => {
-    let items = require("../../back/productos.json")
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve(items)
-            isLoading(false)
-        }, 1500);
-    })
-  }
 
 
   useEffect(() => {
-    async function fetchedItems(){
-      const items = await getItem(); 
-      setProductos(items)
-    }
+    
+    const db = getFirestore()
+    
+    const docRef = query(collection(db, 'items'), where("id", "==", productoid))
+    
+    getDocs(docRef)
+      .then((snapshot) => {
+      setProductos(snapshot.docs.map((doc)=> ({id:doc.id, ...doc.data()})));
+            isLoading(false);
+      })
+      }, []);
 
-    fetchedItems()
-  }, []);
 
  return(
   

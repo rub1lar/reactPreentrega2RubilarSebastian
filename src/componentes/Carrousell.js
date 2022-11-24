@@ -47,19 +47,3 @@ export default Carrousell;
 
 
 
-
-
-
-
-
-/*  function Carrousell() {
-    return (
-
-
-
-
-        
-    )
- }
-
- export default Carrousell ; */

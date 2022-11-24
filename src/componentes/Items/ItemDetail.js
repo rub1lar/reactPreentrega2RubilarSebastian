@@ -34,17 +34,6 @@ function ItemDetail(props) {
         </div>
       </div>
 
-      <div className="">
-        
-         {/*  <button
-            className="item-center font-bold ml-20 mt-6 rounded-full bg-red-700 p-2 hover:bg-red-500"
-            onClick={() => agregarCarrito(props)}
-          >
-            {" "}
-            Agregar al carrito
-          </button> */}
-    
-      </div>
     </div>
   );
 }

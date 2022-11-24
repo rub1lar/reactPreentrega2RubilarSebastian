@@ -4,6 +4,7 @@ import { useState } from "react";
 import {useParams} from "react-router-dom";
 import Item from "./Items/Items";
 import { useEffect } from "react";
+import {collection ,doc,getDocs , getFirestore } from "firebase/firestore"
 
 function Imput(){
 
@@ -11,6 +12,8 @@ function Imput(){
   const {categoria} = useParams ();
   const [filter, setFilter] = useState("");
   const [resultadoBusqueda, setResultadoBusqueda]= useState([])
+
+
 
   const filtrar = (itemABuscar) => {
     //anilizar lo que tengo q filtrar
@@ -22,29 +25,20 @@ function Imput(){
     filtrar(e.target.value)
   }
   
-    const lista = ()=>{ 
-      let items = require("../back/productos.json")
-    return new Promise ((resolve, reject) => {
-      setTimeout(() => {
-          resolve(items)
-      }, 1500);
-  });
-}
-useEffect(()=> { 
 
-  setResultadoBusqueda(productos) 
-  
-  }, [productos]) 
+  useEffect(() => {
+    const db = getFirestore(); 
 
-  
-useEffect(() => {
-  async function fetchedItems(){
-    const items = await lista(); 
-    setProductos(items)
-  }
-
-  fetchedItems()
-}, [] );
+    const itemsCollection = collection(db, "items");
+    
+    getDocs(itemsCollection).then((snapshop)=>{
+      if (snapshop.size===0){
+        console.log ( "no resultados");
+      }
+      setProductos(snapshop.docs.map((doc)=>({id: doc.id, ...doc.data() } )));
+    }); 
+},
+ [] );
 
 
 return ( 
