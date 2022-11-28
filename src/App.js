@@ -15,7 +15,7 @@ import Footer from "./componentes/footer/Footer";
  import  { CartProvider } from './Context/CartContext';
 import Cart from "./componentes/Cart";
 
-import {doc , getDoc, getFirestore} from "firebase/firestore"
+
 
 
 function App() {
