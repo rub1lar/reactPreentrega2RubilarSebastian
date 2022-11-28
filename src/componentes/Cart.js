@@ -3,7 +3,7 @@ import CartContext from "../Context/CartContext";
 import { useContext , useState} from "react";
 import { Link } from "react-router-dom";
 import InputModal from "./ImputModal";
-
+import "./modal.css"
 
 function Cart(props) {
 
@@ -22,7 +22,7 @@ function Cart(props) {
   
     }
 
-    return (
+    return (<div className="fondo">
        <>
        {cart.length === 0 
        ?<p>Tu carrito esta vacio! <Link to='/'>Podes comenzar tu compra aqui</Link></p>
@@ -41,23 +41,24 @@ function Cart(props) {
           />
           ))}  
               </div> 
-              <div className= "inline-flex">
-              <button className="  m-3" onClick={() => clear()}>
+              <div>
+              <div className= "d-flex">
+              <button className="btn btn-primary" onClick={() => clear()}>
                       VACIAR CARRITO
                   </button>
-                  <h4 className="  m-3"> TOTAL DE ITEMS:{cartQuantity()}</h4>
-                  <h4 className="  m-3"> subtotal:${cartTotal()}</h4>
-          <button className="items-center m-3" onClick={resumenPrecio}>
-        Resumen total con iva
+                  <h4 className="text-white  m-3"> TOTAL DE ITEMS:{cartQuantity()}</h4>
+                  <h4 className=" text-white   m-3"> subtotal:${cartTotal()}</h4>
+          <button className="btn btn-primary" onClick={resumenPrecio}>
+        Actualizar resumen total con iva
      </button>
-
-     <div className="flex items-center">
-          <h2 className="text-xl font-sans mx-4">Subtotal: </h2>
-          <h1 className="text-xl ml-2 hover:animate-pulse cursor-default">$ {total[0]} </h1>
-          <h2 className=" text-xl font-sans mx-4">IVA: </h2>
-          <h1 className="text-xl ml-2   hover:animate-pulse cursor-default">$ {total[1]} </h1>
-          <h2 className=" text-2xl font-sans mx-10">Total: </h2>
-          <h1 className="text-2xl ml-2   hover:animate-pulse cursor-default">$ {total[2]} </h1>
+</div>
+     <div className="modal ">
+          <h2 >Subtotal: </h2>
+          <h1>$ {total[0]} </h1>
+          <h2 >IVA: </h2>
+          <h1 >$ {total[1]} </h1>
+          <h2>Total: </h2>
+          <h1 >$ {total[2]} </h1>
 
           <InputModal cart={cart} valorTotal={total[2]}/> 
       </div>
@@ -65,7 +66,7 @@ function Cart(props) {
 
 </div>
      </div>}
-       </>
+       </></div>
     );
 }
 export default Cart;
