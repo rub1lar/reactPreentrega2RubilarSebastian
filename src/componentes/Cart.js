@@ -52,7 +52,7 @@ function Cart(props) {
         Actualizar resumen total con iva
      </button>
 </div>
-     <div className="modal ">
+     <div className="text-white">
           <h2 >Subtotal: </h2>
           <h1>$ {total[0]} </h1>
           <h2 >IVA: </h2>
